@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Weather Dashboard Demo</title>
+  <!-- Tailwind CSS via CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Inter font -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap">
+  <style>
+    body {
+      font-family: 'Inter', sans-serif;
+    }
+  </style>
+</head>
+<body class="bg-blue-950 text-white flex items-center justify-center min-h-screen p-4">
+
+  <div class="bg-blue-900 rounded-3xl shadow-2xl p-6 max-w-lg w-full">
+    <!-- Search Bar (Static) -->
+    <div class="flex items-center space-x-2 mb-8">
+      <input
+        type="text"
+        placeholder="Enter city name..."
+        class="flex-1 p-3 bg-blue-800 text-white rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all placeholder-gray-400"
+      />
+      <button
+        class="bg-blue-700 text-white p-3 rounded-xl shadow-md hover:bg-blue-600 transition-colors"
+      >
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-search"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
+      </button>
+    </div>
+
+    <!-- Current Weather Section -->
+    <div class="bg-blue-800 rounded-2xl p-6 mb-6 text-center">
+      <h2 class="text-xl font-bold mb-2 flex items-center justify-center">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-map-pin mr-2"><path d="M12 2v20"/><path d="M18 12h-4"/><path d="M6 12h-4"/><path d="M12 6V2"/><path d="M12 18V22"/><path d="M12 2a10 10 0 1 0 0 20a10 10 0 0 0 0-20z"/></svg> San Francisco
+      </h2>
+      <div class="flex items-center justify-center my-4">
+        <svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-cloud text-gray-300 mr-4"><path d="M17.5 12.5a4.5 4.5 0 1 0 0-9a4.5 4.5 0 0 0 0 9z"/><path d="M12 10a7 7 0 1 0 0-14a7 7 0 0 0 0 14z"/><path d="M2.5 12.5a4.5 4.5 0 1 0 0-9a4.5 4.5 0 0 0 0 9z"/></svg>
+        <div>
+          <span class="text-6xl font-light">14°</span>
+          <p class="text-xl text-gray-300 mt-1">Cloudy</p>
+        </div>
+      </div>
+      <div class="flex justify-around text-gray-300 mt-4 text-sm">
+        <div class="flex items-center flex-col">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-wind"><path d="M9.5 21a2.5 2.5 0 0 0 0-5"/><path d="M12 10a2.5 2.5 0 0 0 0-5"/><path d="M15.5 16a2.5 2.5 0 0 0 0-5"/><path d="M18 18h2"/><path d="M16 14h2"/><path d="M12 8h2"/><path d="M6 10h2"/><path d="M4 14h2"/><path d="M10 21h2"/><path d="M14 23h2"/><path d="M10 16h2"/><path d="M6 18h2"/><path d="M18 8h2"/><path d="M16 6h2"/><path d="M20 20h2"/></svg>
+          <span>10km/h</span>
+          <span>Wind</span>
+        </div>
+        <div class="flex items-center flex-col">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-droplets"><path d="M7 16l4 4l4-4"/><path d="M12 4l-4 4l4 4"/><path d="M16 8l4 4l-4 4"/></svg>
+          <span>75%</span>
+          <span>Humidity</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- 5-day Forecast Section -->
+    <div class="bg-blue-800 rounded-2xl p-6">
+      <h3 class="text-lg font-semibold mb-4">5-Day Forecast</h3>
+      <div class="space-y-3">
+        <div class="flex items-center justify-between p-3 bg-blue-700 rounded-xl">
+          <span class="text-sm font-semibold w-1/4">Friday</span>
+          <div class="w-1/4 text-center">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-cloud mx-auto"><path d="M17.5 12.5a4.5 4.5 0 1 0 0-9a4.5 4.5 0 0 0 0 9z"/><path d="M12 10a7 7 0 1 0 0-14a7 7 0 0 0 0 14z"/><path d="M2.5 12.5a4.5 4.5 0 1 0 0-9a4.5 4.5 0 0 0 0 9z"/></svg>
+          </div>
+          <span class="text-lg font-bold w-1/4 text-right">15°</span>
+        </div>
+        <div class="flex items-center justify-between p-3 bg-blue-700 rounded-xl">
+          <span class="text-sm font-semibold w-1/4">Saturday</span>
+          <div class="w-1/4 text-center">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-sun mx-auto"><circle cx="12" cy="12" r="4"/><path d="M12 2v2"/><path d="M12 20v2"/><path d="m4.93 4.93l1.41 1.41"/><path d="m17.66 17.66l1.41 1.41"/><path d="M2 12h2"/><path d="M20 12h2"/><path d="m4.93 19.07l1.41-1.41"/><path d="m17.66 6.34l1.41-1.41"/></svg>
+          </div>
+          <span class="text-lg font-bold w-1/4 text-right">18°</span>
+        </div>
+        <div class="flex items-center justify-between p-3 bg-blue-700 rounded-xl">
+          <span class="text-sm font-semibold w-1/4">Sunday</span>
+          <div class="w-1/4 text-center">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-cloud-rain mx-auto"><path d="M4 14.5a2.5 2.5 0 0 1 0-5"/><path d="M12 8a5 5 0 0 0-5 5"/><path d="M16 18a2.5 2.5 0 0 1 0-5"/><path d="M20 20a2.5 2.5 0 0 1 0-5"/><path d="M16 18a2.5 2.5 0 0 1 0-5"/><path d="M12 21v2"/><path d="M12 16v2"/><path d="M12 11v2"/><path d="M16 18v2"/><path d="M8 18v2"/><path d="M16 13v2"/><path d="M8 13v2"/></svg>
+          </div>
+          <span class="text-lg font-bold w-1/4 text-right">16°</span>
+        </div>
+        <div class="flex items-center justify-between p-3 bg-blue-700 rounded-xl">
+          <span class="text-sm font-semibold w-1/4">Monday</span>
+          <div class="w-1/4 text-center">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-sun mx-auto"><circle cx="12" cy="12" r="4"/><path d="M12 2v2"/><path d="M12 20v2"/><path d="m4.93 4.93l1.41 1.41"/><path d="m17.66 17.66l1.41 1.41"/><path d="M2 12h2"/><path d="M20 12h2"/><path d="m4.93 19.07l1.41-1.41"/><path d="m17.66 6.34l1.41-1.41"/></svg>
+          </div>
+          <span class="text-lg font-bold w-1/4 text-right">17°</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>
